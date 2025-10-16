@@ -1,10 +1,15 @@
-print("Voici la devinette")
+import random
 
-nombre_secret = 23
+print("Pense à un chiffre entre 1 et 10 et appuie sur Entrée quand tu es prêt.")
+input()
 
-nombre_utilisateur = int(input("Taper un nombre entre 0 et 100"))
+possibles = list(range(1, 10))
+trouver = False
+essai = random.choice(possibles)
+reponse = input(f"Est-ce que ton chiffre est {essai} ? (oui/non) : ").strip().lower()
 
-if nombre_utilisateur == nombre_secret:
-    print("Gagné")
+if reponse == essai:
+        print(f"Super ! J'ai deviné que ton chiffre était {essai} ! ")
 else:
-    print("Perdu")
+        print(f"Super! mais non :( !!!!  bug fixed ")
+
