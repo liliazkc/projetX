@@ -1,0 +1,16 @@
+name: Build programme C
+
+on:
+  push :
+      branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+       runs-on: unbuntu-latest
+       steps:
+            - uses: action/checkout@v4
+            - name : Installation du compilater
+              run : apt install gcc
+            - name : Build
+              run : gcc -o main main.c
